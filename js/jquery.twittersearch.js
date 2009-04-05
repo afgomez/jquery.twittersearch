@@ -34,7 +34,8 @@
     // Default settings
     $.fn.twitterSearch.defaults = {
         results: 20,
-        avatar: true
+        avatar: true,
+        avatar_size: 'normal'
     };
     
     
@@ -68,14 +69,33 @@
             
             $(data.results).each(function(i, twitt) {
                 var li = $('<li>');
+                
+                // Avatar
                 if (opts.avatar) {
+                    switch(opts.avatar_size) {
+                        case 'bigger':
+                            var avatar_measures = 73;
+                            break;
+                        case 'mini': 
+                            var avatar_measures = 24;
+                            break;
+                        case 'normal':
+                            var avatar_measures = 48;
+                            break;
+                        default: // If users misspells it will default to normal
+                            opts.avatar_size = 'normal';
+                            var avatar_measures = 48;
+                    }
+                    if (opts.avatar_size != 'normal') {
+                        twitt.profile_image_url = twitt.profile_image_url.replace(/normal\.(gif|jpg|png)$/, opts.avatar_size + ".$1");
+                    }
                     $('<a>')
                         .attr('href', 'http://twitter.com/' + twitt.from_user.toLowerCase())
                         .append(
                             $('<img>')
                                 .attr('src', twitt.profile_image_url)
-                                .attr('width', 48)
-                                .attr('height', 48)
+                                .attr('width', avatar_measures)
+                                .attr('height', avatar_measures)
                                 .addClass('twittersearch-avatar')
                             )
                         .appendTo(li);

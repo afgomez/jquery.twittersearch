@@ -11,7 +11,7 @@
         <script src="js/jquery.twittersearch.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             $(function() {
-                $('.same-search').twitterSearch('query');
+                $('.same-search').twitterSearch('query', { avatar_size:'mini' });
                 $('#twitter-obama').twitterSearch('obama', { results:5, avatar:false });
                 $('#twitter-internet').twitterSearch('wierdcharactersrsdfgsdfgs');
             });
