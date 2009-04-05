@@ -69,11 +69,15 @@
             $(data.results).each(function(i, twitt) {
                 var li = $('<li>');
                 if (opts.avatar) {
-                    $('<img>')
-                        .attr('src', twitt.profile_image_url)
-                        .attr('width', 48)
-                        .attr('height', 48)
-                        .addClass('twittersearch-avatar')
+                    $('<a>')
+                        .attr('href', 'http://twitter.com/' + twitt.from_user.toLowerCase())
+                        .append(
+                            $('<img>')
+                                .attr('src', twitt.profile_image_url)
+                                .attr('width', 48)
+                                .attr('height', 48)
+                                .addClass('twittersearch-avatar')
+                            )
                         .appendTo(li);
                 }
                 
