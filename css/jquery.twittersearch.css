@@ -1,0 +1,11 @@
+* { margin:0; padding:0; }
+h2 { font:bold 18px Helvetica, Arial, sans-serif; margin-bottom:10px; }
+h2 strong { color:#3AD; }
+
+.col { font:12px Helvetica, Arial, sans-serif; padding:10px; float:left; width:280px; background:#9AE4E8; margin:10px 0 0 10px; }
+
+.twittersearch-list { list-style:none; }
+.twittersearch-list li { clear:both; padding:10px 0; border-top:1px dotted #68999c; overflow:hidden; }
+.twittersearch-list .twittersearch-avatar { float:left; margin-right:5px; border:3px solid #fff; }
+
+.tweetersearch-info { padding:10px; text-align:center; background:#B6EDEF; }

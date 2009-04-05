@@ -5,14 +5,13 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <title>jquery-twitter-search</title>
         
-        <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-        
+        <link rel="stylesheet" href="css/jquery.twittersearch.css" type="text/css" media="screen" title="no title" charset="utf-8" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/jquery.twittersearch.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             $(function() {
-                $('.same-search').twitterSearch('query', { avatar_size:'mini' });
-                $('#twitter-obama').twitterSearch('obama', { results:5, avatar:false });
+                $('.twitter-query').twitterSearch('query', { results:10 });
+                $('#twitter-obama').twitterSearch('obama', { avatar:false });
                 $('#twitter-internet').twitterSearch('wierdcharactersrsdfgsdfgs');
             });
             
@@ -21,8 +20,17 @@
     </head>
     <body>
         
-        <ul class="same-search"></ul>
-        <div id="twitter-obama"></div>
-        <div id="twitter-internet"></div>
+        <div class="col">
+            <h2>Twitts matching &ldquo;<strong>query</strong>&rdquo;</h2>
+            <div class="twitter-query"></div>
+        </div>
+        <div class="col">
+            <h2>Twitts matching &ldquo;<strong>obama</strong>&rdquo;</h2>
+            <div id="twitter-obama"></div>
+        </div>
+        <div class="col">
+            <h2>Twitts matching &ldquo;<strong>wierdcharactersrsdfgsdfgs</strong>&rdquo;</h2>
+            <div id="twitter-internet"></div>
+        </div>
     </body>
 </html>
