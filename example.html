@@ -12,8 +12,8 @@
         <script type="text/javascript" charset="utf-8">
             $(function() {
                 $('.same-search').twitterSearch('query');
-                $('#twitter-obama').twitterSearch('obama');
-                $('#twitter-internet').twitterSearch('stat rsdfgsdfgs', { results: 5} );
+                $('#twitter-obama').twitterSearch('obama', { results:5, avatar:false });
+                $('#twitter-internet').twitterSearch('wierdcharactersrsdfgsdfgs');
             });
             
         </script>
@@ -21,14 +21,8 @@
     </head>
     <body>
         
-        <div class="same-search"></div>
         <ul class="same-search"></ul>
-        
-        <div id="twitter-obama">
-            
-        </div>
-        <div id="twitter-internet">
-            
-        </div>
+        <div id="twitter-obama"></div>
+        <div id="twitter-internet"></div>
     </body>
 </html>

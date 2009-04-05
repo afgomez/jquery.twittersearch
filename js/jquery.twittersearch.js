@@ -19,7 +19,7 @@
             },
             dataType: 'jsonp',
             success: function(data, status) {
-                renderInto(jObject, data);
+                renderInto(jObject, data, opts);
             },
             error: function() {
                 // TODO
@@ -31,14 +31,15 @@
     
     // Default settings
     $.fn.twitterSearch.defaults = {
-        results: 20
+        results: 20,
+        avatar: true
     };
     
     
     /**
      * Renders the data returned from Twitter into each jQuery object
      */
-    function renderInto(jObject, data) {
+    function renderInto(jObject, data, opts) {
         jObject.each(function() {
             
             if (data.results.length == 0) {
@@ -61,9 +62,18 @@
             
             
             $(data.results).each(function(i, twitt) {
-                $('<li>')
-                    .html(twitt.text)
-                    .appendTo(list);
+                var li = $('<li>');
+                if (opts.avatar) {
+                    $('<img>')
+                        .attr('src', twitt.profile_image_url)
+                        .attr('width', 48)
+                        .attr('height', 48)
+                        .addClass('twittersearch-avatar')
+                        .appendTo(li);
+                }
+                
+                li.append(twitt.text);
+                li.appendTo(list);
             });
         });
     }
