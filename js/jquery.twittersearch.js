@@ -2,8 +2,10 @@
 (function($) {
     
     /**
-     * Performs a query to the Twitter search API and fills a jQuery object
-     * with the results
+     * Performs a query to the Twitter search API and fills a jQuery object with the results
+     * @param query_string The string of the query
+     * @param options An object with user defined options.
+     * @return a jQuery object
      */
     $.fn.twitterSearch = function(query_string, options) {
         var opts = $.extend({}, $.fn.twitterSearch.defaults, options);
@@ -38,6 +40,9 @@
     
     /**
      * Renders the data returned from Twitter into each jQuery object
+     * @param jObject The jQuery object where the data must be appended.
+     * @param data The data itself
+     * @param opts Options object from the constructor
      */
     function renderInto(jObject, data, opts) {
         jObject.each(function() {
