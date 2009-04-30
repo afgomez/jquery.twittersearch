@@ -6,6 +6,7 @@ h2 strong { color:#3AD; }
 
 .twittersearch-list { list-style:none; }
 .twittersearch-list li { clear:both; padding:10px 0; border-top:1px dotted #68999c; overflow:hidden; }
-.twittersearch-list .twittersearch-avatar { float:left; margin-right:5px; border:3px solid #fff; }
+.twittersearch-list img { float:left; margin-right:5px; border:3px solid #fff; }
+.twittersearch-list p { display:table; height:1%; }
 
 .tweetersearch-info { padding:10px; text-align:center; background:#B6EDEF; }
