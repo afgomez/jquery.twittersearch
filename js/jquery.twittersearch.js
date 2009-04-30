@@ -35,7 +35,8 @@
     $.fn.twitterSearch.defaults = {
         results: 20,
         avatar_size: 'normal',
-        template: '<li class="twitt"><a href="{author_url}"><img src="{avatar_url}" width="{avatar_size}" height="{avatar_size}" alt="{author_name}" /></a><p>{text}</p></li>'
+        template: '<li class="twitt"><a href="{author_url}"><img src="{avatar_url}" width="{avatar_size}" height="{avatar_size}" alt="{author_name}" /></a><p>{text}</p></li>',
+        post_load_callback: undefined
     };
     
     
@@ -97,6 +98,9 @@
                 list.append(parsed_template);
             });
         });
+        if (typeof(opts.post_load_callback) == 'function') {
+            opts.post_load_callback.call(jObject);
+        }
     }
     
 })(jQuery);

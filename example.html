@@ -11,7 +11,10 @@
         <script type="text/javascript" charset="utf-8">
             $(function() {
                 $('.twitter-query').twitterSearch('query', { results:10 });
-                $('#twitter-obama').twitterSearch('obama', { avatar_size: 'mini' });
+                $('#twitter-obama').twitterSearch('obama', {
+                                                                avatar_size: 'mini',
+                                                                post_load_callback:function() { alert('Loaded "obama" query'); }
+                                                           });
                 $('#twitter-internet').twitterSearch('wierdcharactersrsdfgsdfgs');
             });
             
